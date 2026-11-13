@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>¿Quieres ser mi Caballero de Honor?</title>
+    <meta name="description" content="Tengo una pregunta muy especial para ti ✉️">
+    <meta name="theme-color" content="#5E1426">
+
+    <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://invitavale.com/Caballero/">
+    <meta property="og:title" content="Tengo una pregunta muy especial para ti ✉️">
+    <meta property="og:description" content="Luis Almanzar · Abre el sobre">
+    <meta property="og:image" content="https://invitavale.com/Caballero/og-portada.jpg?v=1">
+    <meta property="og:image:secure_url" content="https://invitavale.com/Caballero/og-portada.jpg?v=1">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sobre vino con sello dorado">
+    <meta property="og:locale" content="es_DO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://invitavale.com/Caballero/og-portada.jpg?v=1">
+    <link rel="canonical" href="https://invitavale.com/Caballero/">
+
+    <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-sc-latin-500-normal.woff2" crossorigin>
+    <link rel="stylesheet" href="estilo.css?v=11">
+</head>
+<body>
+    <!-- Gráficos en código: degradados y adornos reutilizables -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="gOro" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#E9CC8E"/><stop offset=".45" stop-color="#B98A45"/><stop offset=".7" stop-color="#DDBA78"/><stop offset="1" stop-color="#9C7232"/>
+            </linearGradient>
+            <linearGradient id="gOroH" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="300" y2="0">
+                <stop offset="0" stop-color="#B98A45" stop-opacity="0"/><stop offset=".25" stop-color="#C9A062"/><stop offset=".5" stop-color="#9C7232"/><stop offset=".75" stop-color="#C9A062"/><stop offset="1" stop-color="#B98A45" stop-opacity="0"/>
+            </linearGradient>
+            <!-- esquina art déco -->
+            <symbol id="esquina" viewBox="0 0 60 60">
+                <path d="M2 40 V2 H40" fill="none" stroke="url(#gOro)" stroke-width="1.4"/>
+                <path d="M9 28 V9 H28" fill="none" stroke="url(#gOro)" stroke-width="1"/>
+                <path d="M9 9 L18 18" stroke="url(#gOro)" stroke-width="1"/>
+                <path d="M20 16 L24 20 L20 24 L16 20Z" fill="url(#gOro)"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- 1. SOBRE (toca el sello para abrir) -->
+    <div id="sobre" class="sobre" role="button" tabindex="0" aria-label="Toca el sello para abrir la invitación">
+        <div class="sobre-cuerpo"></div>
+        <div class="sobre-solapa-wrap"><div class="sobre-solapa"></div></div>
+        <div class="sobre-sello" aria-hidden="true">
+            <img src="img/sello.webp" alt="" width="400" height="400">
+        </div>
+        <p class="sobre-para" aria-hidden="true">Para <span id="sobreNombre">ti</span></p>
+        <p class="sobre-hint">Toca el sello para abrir</p>
+    </div>
+
+    <!-- Música (opcional: se muestra solo si hay archivo configurado en app.js) -->
+    <button id="btnMusica" class="btn-musica" aria-label="Pausar o reanudar música" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+    </button>
+    <audio id="musica" preload="auto" loop playsinline></audio>
+
+    <main class="escena">
+        <article id="tarjeta" class="tarjeta" aria-live="polite">
+            <!-- decoración: marco dorado doble con esquinas art déco -->
+            <svg id="marco" class="deco marco" aria-hidden="true"><path/></svg>
+            <svg class="deco esquina esq-tl" aria-hidden="true"><use href="#esquina"/></svg>
+            <svg class="deco esquina esq-tr" aria-hidden="true"><use href="#esquina"/></svg>
+            <svg class="deco esquina esq-bl" aria-hidden="true"><use href="#esquina"/></svg>
+            <svg class="deco esquina esq-br" aria-hidden="true"><use href="#esquina"/></svg>
+
+            <div class="t-cuerpo">
+                <!-- adorno superior -->
+                <svg class="adorno" viewBox="0 0 300 50" aria-hidden="true">
+                    <g fill="none" stroke="url(#gOro)" stroke-linecap="round">
+                        <g stroke="url(#gOroH)"><path d="M10 25 H118" stroke-width="1.3"/><path d="M182 25 H290" stroke-width="1.3"/>
+                        <path d="M60 18 H112" stroke-width=".8"/><path d="M188 18 H240" stroke-width=".8"/>
+                        <path d="M60 32 H112" stroke-width=".8"/><path d="M188 32 H240" stroke-width=".8"/></g>
+                        <path d="M122 13 L134 25 L122 37" stroke-width="1.1"/><path d="M178 13 L166 25 L178 37" stroke-width="1.1"/>
+                        <path d="M150 5 L170 25 L150 45 L130 25Z" stroke-width="1.3"/>
+                    </g>
+                    <path d="M150 15 L160 25 L150 35 L140 25Z" fill="url(#gOro)"/>
+                </svg>
+
+                <!-- 2. PREGUNTA (se escribe sola) -->
+                <section id="pregunta" class="paso paso-pregunta">
+                    <p id="saludo" class="saludo"></p>
+                    <p id="intro" class="intro" data-texto="Estoy a punto de convertir mi sueño en realidad y me gustaría que una persona tan importante como tú sea parte de esto:"></p>
+
+                    <div id="divCorazon" class="div-corazon oculto" aria-hidden="true">
+                        <svg viewBox="0 0 300 20"><g stroke="url(#gOroH)" stroke-width="1.1"><path d="M20 10 H134"/><path d="M166 10 H280"/></g><path d="M150 3 L157 10 L150 17 L143 10Z" fill="url(#gOro)"/><circle cx="139" cy="10" r="1.6" fill="#B98A45"/><circle cx="161" cy="10" r="1.6" fill="#B98A45"/></svg>
+                    </div>
+
+                    <h1 class="titulo">
+                        <span id="tituloSerif" class="titulo-serif" data-texto="¿Deseas ser mi"></span>
+                        <span id="tituloScript" class="titulo-script">Caballero de Honor?</span>
+                        <svg id="trazo" class="trazo" viewBox="0 0 300 40" aria-hidden="true">
+                            <path d="M138 24 H24"/>
+                            <path d="M162 24 H276"/>
+                            <path class="trazo-estrella" d="M150 14 L160 24 L150 34 L140 24Z"/>
+                        </svg>
+                    </h1>
+
+                    <div id="botones" class="botones oculto">
+                        <button id="btnSi" class="btn btn-si"><span>Sí, acepto</span></button>
+                        <button id="btnNo" class="btn btn-no">No, gracias</button>
+                    </div>
+                    <p class="saltar" id="saltar">Toca para continuar…</p>
+                </section>
+
+                <!-- 3. RESPUESTA: SÍ -->
+                <section id="respuesta" class="paso paso-respuesta" hidden>
+                    <p class="kicker">¡Sabía que dirías que sí!</p>
+                    <h2 class="gracias">Gracias, <span id="graciasNombre">hermano</span></h2>
+                    <p class="texto">Contigo a mi lado, este día será aún más especial. Prepárate, porque vamos a vivirlo juntos.</p>
+
+                    <!-- Fecha confidencial -->
+                    <div class="bloque">
+                        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><circle cx="8.5" cy="14.5" r=".9"/><circle cx="12" cy="14.5" r=".9"/><circle cx="15.5" cy="14.5" r=".9"/></svg>
+                        <div class="fecha">
+                            <span class="fecha-label">Fecha:</span>
+                            <div class="fecha-caja">
+                                <span id="fechaTexto" class="fecha-texto">04 de junio 2027</span>
+                                <span class="fecha-sello">Confidencial</span>
+                            </div>
+                        </div>
+                        <p class="texto chico">🤫 Esta fecha es confidencial: por ahora es un secreto entre nosotros. Muy pronto te daré todos los detalles.</p>
+                    </div>
+
+                    <div class="div-corazon" aria-hidden="true">
+                        <svg viewBox="0 0 300 20"><g stroke="url(#gOroH)" stroke-width="1.1"><path d="M20 10 H134"/><path d="M166 10 H280"/></g><path d="M150 3 L157 10 L150 17 L143 10Z" fill="url(#gOro)"/><circle cx="139" cy="10" r="1.6" fill="#B98A45"/><circle cx="161" cy="10" r="1.6" fill="#B98A45"/></svg>
+                    </div>
+
+                    <!-- Imagen de inspiración (EDITAR o quitar) -->
+                    <div class="bloque">
+                        <p class="sc-titulo">Código de vestimenta</p>
+                        <p class="dress-script">Traje en tono vino</p>
+                        <figure class="vestidos">
+                            <img src="img/trajes.webp" alt="Trajes de tres piezas color vino con corbata y pañuelo" width="1000" height="1056" loading="lazy">
+                        </figure>
+                        <div class="paleta" aria-hidden="true">
+                            <span style="--c:#4A0F1E"></span><span style="--c:#6B1730"></span><span style="--c:#8A2342"></span>
+                        </div>
+                    </div>
+
+                    <a id="btnWhats" class="btn btn-si btn-whats" href="#" target="_blank" rel="noopener" hidden><span>Avisarle por WhatsApp</span></a>
+
+                    <p class="firma-pre">Con cariño,</p>
+                    <p id="firma" class="firma"></p>
+                </section>
+
+                <!-- adorno inferior -->
+                <svg class="adorno adorno-pie" viewBox="0 0 300 30" aria-hidden="true">
+                    <g fill="none" stroke="url(#gOro)" stroke-linecap="round" stroke-width="1.1">
+                        <g stroke="url(#gOroH)"><path d="M30 15 H126"/><path d="M174 15 H270"/></g>
+                        <path d="M132 7 L140 15 L132 23"/><path d="M168 7 L160 15 L168 23"/>
+                    </g>
+                    <path d="M150 7 L158 15 L150 23 L142 15Z" fill="url(#gOro)"/>
+                </svg>
+            </div>
+        </article>
+    </main>
+
+    <canvas id="confeti" class="confeti" aria-hidden="true"></canvas>
+    <script src="app.js?v=10"></script>
+</body>
+</html>
